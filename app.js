@@ -57,4 +57,4 @@ app.get('/about', (req, res) => {
 //     res.send('bad request')
 // })
 
-app.listen(3000,() => console.log('server runing at port 3000'));
+app.listen(port,() => console.log('server runing at port `${port}`));
