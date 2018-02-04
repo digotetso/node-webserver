@@ -9,9 +9,9 @@ var app =  express();
 //tell express which view engine you wanna use
 
 app.set('view engine', 'hbs')
-app.use((req, res, next) => {
-    res.render('maintenance.hbs')
-})
+// app.use((req, res, next) => {
+//     res.render('maintenance.hbs')
+// })
 
 app.use((req, res, next) => {
 var now = new Date().toString()
@@ -47,8 +47,15 @@ app.get('/', (req, res) => {
    })
 })
 
+app.get('/project', (req, res) =>{
+    res.render('project', {
+        pageHeading: 'List of projects',
+
+    })
+})
+
 app.get('/about', (req, res) => {
-    res.render('home.hbs',{
+    res.render('about.hbs',{
         pageTitle:'dee',
         pageHeading: 'About page'
     })
